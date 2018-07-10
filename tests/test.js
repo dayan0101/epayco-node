@@ -20,10 +20,9 @@ var epayco = require("../")({
 });
 
 var query = {
-  action: "find",
+  action: "findOne",
   selector: {
-    _id: "FFcz86jidc3ppPWC3",
-    idUser: "9eacd21d0ac126163ee8d2e7209d94e6"
+    email: "cristiansk311@gmail.com"
   },
   // selector: {
   //   idCustomer: "AwocdFXXJLXhGDCjQ"
@@ -43,7 +42,12 @@ var query = {
 
 // console.log(epayco);
 
-epayco.subscriptions
+// epayco.subscriptions
+//   .query(query)
+//   .then(result => console.log(result))
+//   .catch(error => console.log(error));
+
+  epayco.customers
   .query(query)
   .then(result => console.log(result))
   .catch(error => console.log(error));
